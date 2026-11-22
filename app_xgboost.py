@@ -18,7 +18,7 @@ def baca_bilangan_bulat(teks, nama, minimum, maksimum):
     if teks == "":
         return None, f"{nama} belum diisi. Silakan isi dengan angka, misalnya 120."
     if not (teks.isascii() and teks.isdigit()):
-        return None, f"{nama} hanya boleh diisi angka utuh, tanpa huruf, titik, koma, atau tanda minus. Contoh: 120 (bukan 120,5 atau 1.000)."
+        return None, f"{nama} hanya boleh diisi angka bulat, tanpa huruf, titik, koma, atau tanda minus. Contoh: 120 (bukan 120,5 atau 1.000)."
     nilai = int(teks)
     if nilai < minimum:
         return None, f"{nama} terlalu kecil ({nilai} m2). Isi dengan angka antara {minimum} sampai {maksimum} m2."
@@ -34,14 +34,14 @@ kamar_mandi = st.sidebar.slider("Jumlah Kamar Mandi", 1, 10, 2)
 carport = st.sidebar.slider("Jumlah Carport", 0, 5, 1)
 teks_tanah = st.sidebar.text_input(
     "Luas Tanah (m2)", value="120",
-    help=f"Bilangan bulat, {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2")
+    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2"
 luas_tanah, error_tanah = baca_bilangan_bulat(teks_tanah, "Luas tanah", LUAS_TANAH_MIN, LUAS_TANAH_MAX)
 if error_tanah:
     st.sidebar.error(error_tanah)
 
 teks_bangunan = st.sidebar.text_input(
     "Luas Bangunan (m2)", value="100",
-    help=f"Bilangan bulat, {LUAS_BANGUNAN_MIN} sampai {LUAS_BANGUNAN_MAX} m2")
+    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2"
 luas_bangunan, error_bangunan = baca_bilangan_bulat(teks_bangunan, "Luas bangunan", LUAS_BANGUNAN_MIN, LUAS_BANGUNAN_MAX)
 if error_bangunan:
     st.sidebar.error(error_bangunan)
