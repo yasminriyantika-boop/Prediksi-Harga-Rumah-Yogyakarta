@@ -63,11 +63,7 @@ kecamatan_per_kab = {kab: sorted(daftar) for kab, daftar in kecamatan_per_kab.it
 
 # ---------------------------------------------------------------- panel kiri: lokasi
 st.sidebar.header("Lokasi")
-daftar_kab = sorted(kecamatan_per_kab)
-kabupaten = st.sidebar.selectbox("Kabupaten/Kota", daftar_kab,
-                                 index=daftar_kab.index("Sleman") if "Sleman" in daftar_kab else 0)
-kecamatan = st.sidebar.selectbox("Kecamatan", kecamatan_per_kab[kabupaten], key="kecamatan_" + kabupaten)
-
+lokasi = st.sidebar.selectbox("Lokasi (Kecamatan, Kabupaten/Kota)", meta["daftar_lokasi"])
 # ---------------------------------------------------------------- bagian tengah: detail rumah
 st.title("Prediksi Harga Rumah di Yogyakarta")
 st.write("Pilih lokasi di panel kiri, lalu isi detail rumah di bawah ini untuk memperkirakan harganya.")
@@ -122,6 +118,6 @@ if tekan_prediksi and not daftar_error:
 
         st.subheader("Hasil Prediksi Harga Rumah")
         st.metric("Perkiraan harga", "Rp " + f"{hasil:,.0f}".replace(",", "."))
-        st.caption(f"Lokasi: {kecamatan}, {kabupaten}. Ini hanya perkiraan berdasarkan data iklan rumah; harga sebenarnya bisa berbeda.")
+        st.caption(f"Lokasi: {lokasi}. Ini hanya perkiraan berdasarkan data iklan rumah; harga sebenarnya bisa berbeda.")
     except Exception as e:
         st.error(f"Terjadi kesalahan saat melakukan prediksi: {e}")
