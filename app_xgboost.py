@@ -16,12 +16,14 @@ LUAS_BANGUNAN_MIN, LUAS_BANGUNAN_MAX = 20, 800
 def baca_bilangan_bulat(teks, nama, minimum, maksimum):
     teks = teks.strip()
     if teks == "":
-        return None, f"{nama} wajib diisi."
+        return None, f"{nama} belum diisi. Silakan isi dengan angka, misalnya 120."
     if not (teks.isascii() and teks.isdigit()):
-        return None, f"{nama} harus berupa bilangan bulat positif (angka saja, tanpa titik, koma, atau huruf)."
+        return None, f"{nama} hanya boleh diisi angka utuh, tanpa huruf, titik, koma, atau tanda minus. Contoh: 120 (bukan 120,5 atau 1.000)."
     nilai = int(teks)
-    if nilai < minimum or nilai > maksimum:
-        return None, f"{nama} harus antara {minimum} dan {maksimum} m2 (kamu mengisi {nilai})."
+    if nilai < minimum:
+        return None, f"{nama} terlalu kecil ({nilai} m2). Isi dengan angka antara {minimum} sampai {maksimum} m2."
+    if nilai > maksimum:
+        return None, f"{nama} terlalu besar ({nilai} m2). Isi dengan angka antara {minimum} sampai {maksimum} m2."
     return nilai, None
 
 st.sidebar.header("Input Parameter")
