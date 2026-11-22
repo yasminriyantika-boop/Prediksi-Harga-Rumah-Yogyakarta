@@ -1,0 +1,111 @@
+{
+  "nama_model": "XGBoost",
+  "fitur": [
+    "kamar_tidur",
+    "kamar_mandi",
+    "carport",
+    "luas_tanah",
+    "luas_bangunan",
+    "lokasi",
+    "kabupaten_kota"
+  ],
+  "daftar_lokasi": [
+    "Bambanglipuro, Bantul",
+    "Banguntapan, Bantul",
+    "Bantul, Bantul",
+    "Bantul, Yogyakarta",
+    "Berbah, Sleman",
+    "Caturtunggal, Sleman",
+    "Caturtunggal, Yogyakarta",
+    "Cebongan, Sleman",
+    "Cebongan, Yogyakarta",
+    "Condong Catur, Sleman",
+    "Danurejan, Yogyakarta",
+    "Demangan, Yogyakarta",
+    "Depok, Sleman",
+    "Gamping, Sleman",
+    "Gedong Tengen, Yogyakarta",
+    "Godean, Sleman",
+    "Gondokusuman, Yogyakarta",
+    "Gondomanan, Yogyakarta",
+    "Imogiri, Bantul",
+    "Imogiri, Yogyakarta",
+    "Jetis, Bantul",
+    "Jetis, Yogyakarta",
+    "Jombor, Sleman",
+    "Kalasan, Sleman",
+    "Kaliurang, Sleman",
+    "Kaliurang, Yogyakarta",
+    "Kasihan, Bantul",
+    "Kotagede, Yogyakarta",
+    "Kraton, Yogyakarta",
+    "Kulonprogo, Kulon Progo",
+    "Kulonprogo, Yogyakarta",
+    "Maguwoharjo, Yogyakarta",
+    "Mantrijeron, Yogyakarta",
+    "Mergangsan, Yogyakarta",
+    "Minggir, Sleman",
+    "Mlati, Sleman",
+    "Moyudan, Sleman",
+    "Nanggulan, Kulon Progo",
+    "Ngaglik, Sleman",
+    "Ngemplak, Sleman",
+    "Nologaten, Yogyakarta",
+    "Pajangan, Bantul",
+    "Pakem, Sleman",
+    "Pandak, Bantul",
+    "Piyungan, Bantul",
+    "Playen, Gunung Kidul",
+    "Plered, Bantul",
+    "Pogung, Yogyakarta",
+    "Prambanan, Sleman",
+    "Purwomartani, Sleman",
+    "Purwomartani, Yogyakarta",
+    "Sayegan, Sleman",
+    "Sedayu, Bantul",
+    "Sentolo, Kulon Progo",
+    "Seturan, Yogyakarta",
+    "Sewon, Bantul",
+    "Sidoarum, Sleman",
+    "Sleman, Sleman",
+    "Sleman, Yogyakarta",
+    "Tegalrejo, Yogyakarta",
+    "Tempel, Sleman",
+    "Turi, Sleman",
+    "Umbulharjo, Yogyakarta",
+    "Wates, Kulon Progo",
+    "Wirobrajan, Yogyakarta",
+    "Wonosari, Gunung Kidul"
+  ],
+  "rentang": {
+    "kamar_tidur": [
+      1.0,
+      40.0
+    ],
+    "kamar_mandi": [
+      1.0,
+      42.0
+    ],
+    "carport": [
+      1.0,
+      10.0
+    ],
+    "luas_tanah": [
+      36.0,
+      1200.0
+    ],
+    "luas_bangunan": [
+      4.0,
+      1000.0
+    ]
+  },
+  "metrik_uji": {
+    "R2": 0.7058,
+    "MAE (Rp juta)": 304.9123,
+    "RMSE (Rp juta)": 514.1622,
+    "MAPE (%)": 23.2436,
+    "R2 (log)": 0.8409,
+    "RMSLE": 0.2914,
+    "RMSLE CV": 0.2892
+  }
+}
