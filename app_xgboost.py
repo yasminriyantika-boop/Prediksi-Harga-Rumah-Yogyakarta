@@ -32,9 +32,12 @@ data_input = pd.DataFrame([{
 st.subheader("Parameter Input Pengguna:")
 st.write(data_input)
 
+kolom_numerik = ["kamar_tidur", "kamar_mandi", "carport", "luas_tanah", "luas_bangunan"]
+
 if st.sidebar.button("Prediksi Harga"):
     try:
-        hasil = model.predict(data_input)[0]
+        data_prediksi = data_input.astype({kolom: "float64" for kolom in kolom_numerik})
+        hasil = model.predict(data_prediksi)[0]
         st.subheader("Hasil Prediksi Harga Rumah:")
         st.write("Harga diperkirakan: Rp " + f"{hasil:,.0f}".replace(",", "."))
     except Exception as e:
