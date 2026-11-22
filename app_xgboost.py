@@ -34,14 +34,14 @@ kamar_mandi = st.sidebar.slider("Jumlah Kamar Mandi", 1, 10, 2)
 carport = st.sidebar.slider("Jumlah Carport", 0, 5, 1)
 teks_tanah = st.sidebar.text_input(
     "Luas Tanah (m2)", value="120",
-    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2"
+    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2")
 luas_tanah, error_tanah = baca_bilangan_bulat(teks_tanah, "Luas tanah", LUAS_TANAH_MIN, LUAS_TANAH_MAX)
 if error_tanah:
     st.sidebar.error(error_tanah)
 
 teks_bangunan = st.sidebar.text_input(
     "Luas Bangunan (m2)", value="100",
-    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2"
+    help=f"Isi dengan angka bulat (Contoh: 120), antara {LUAS_TANAH_MIN} sampai {LUAS_TANAH_MAX} m2")
 luas_bangunan, error_bangunan = baca_bilangan_bulat(teks_bangunan, "Luas bangunan", LUAS_BANGUNAN_MIN, LUAS_BANGUNAN_MAX)
 if error_bangunan:
     st.sidebar.error(error_bangunan)
